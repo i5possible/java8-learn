@@ -3,10 +3,12 @@ package lambda;
 public class Fruit {
     int weight;
     Color color;
+    String taste;
 
-    public Fruit(int weight, Color color) {
+    public Fruit(int weight, Color color, String taste) {
         this.weight = weight;
         this.color = color;
+        this.taste = taste;
     }
 
     public int getWeight() {
@@ -23,6 +25,14 @@ public class Fruit {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public String getTaste() {
+        return taste;
+    }
+
+    public void setTaste(String taste) {
+        this.taste = taste;
     }
 }
 
