@@ -1,16 +1,15 @@
-package java8inaction.stream;
+package java8inaction.stream.Dishes;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static java.lang.System.out;
-import static java8inaction.stream.Menu.menu;
 
 public class Mapping {
     public static void main(String[] args) {
         // map
-        menu.stream().map(Dish::getName).forEach(out::println);
+        Menu.menu.stream().map(Dish::getName).forEach(out::println);
         System.out.println();
 
         Arrays.asList("Java8", "Lambda", "In", "Action").stream()
@@ -18,7 +17,7 @@ public class Mapping {
                 .forEach(out::println);
         System.out.println();
 
-        menu.stream().map(Dish::getName)
+        Menu.menu.stream().map(Dish::getName)
                 .map(String::length)
                 .forEach(out::println);
         System.out.println();

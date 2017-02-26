@@ -1,4 +1,4 @@
-package java8inaction.stream;
+package java8inaction.stream.Dishes;
 
 public enum Type {
     MEAT,

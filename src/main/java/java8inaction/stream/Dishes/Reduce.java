@@ -1,9 +1,9 @@
-package java8inaction.stream;
+package java8inaction.stream.Dishes;
 
 import java.util.Optional;
 
-import static java8inaction.stream.Menu.menu;
-import static java8inaction.stream.Numbers.numbers;
+import static java8inaction.stream.Dishes.Menu.menu;
+import static java8inaction.stream.Dishes.Numbers.numbers;
 
 public class Reduce {
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class Reduce {
         numbers.stream().reduce(Integer::min);
         Integer dishMapToIntCount = menu.stream().map(dish -> 1).reduce(0, Integer::sum);
         long dishCount = menu.stream().count();
-        
+
 
     }
 }
