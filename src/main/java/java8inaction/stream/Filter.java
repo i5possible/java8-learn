@@ -13,7 +13,7 @@ public class Filter {
         System.out.println();
 
         // distinct
-        Arrays.asList(1,2,1,3,4,5,2).stream()
+        Arrays.asList(1, 2, 1, 3, 4, 5, 2).stream()
                 .filter(i -> i % 2 == 0)
                 .distinct()
                 .forEach(out::println);

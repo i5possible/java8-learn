@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ExecuteAround {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         processFile(BufferedReader::readLine);
         processFile(br -> br.readLine() + br.readLine());
     }

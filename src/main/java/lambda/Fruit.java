@@ -1,5 +1,12 @@
 package lambda;
 
+enum Color {
+    Red,
+    Yellow,
+    Green,
+    Blue
+}
+
 public class Fruit {
     int weight;
     Color color;
@@ -34,11 +41,4 @@ public class Fruit {
     public void setTaste(String taste) {
         this.taste = taste;
     }
-}
-
-enum Color {
-    Red,
-    Yellow,
-    Green,
-    Blue
 }

@@ -23,10 +23,10 @@ public class Main {
         Predicate<Apple> nonRedApple = redApple.negate();
         redApple.negate().or(apple -> apple.getWeight() == 150).and(apple -> apple.getTaste().equals("delicious"));
 
-        Function<Integer,Integer> f = x -> x + 1;
-        Function<Integer,Integer> g = x -> x * 2;
-        Function<Integer,Integer> h = f.andThen(g);
-        Function<Integer,Integer> h2 = f.compose(g);
+        Function<Integer, Integer> f = x -> x + 1;
+        Function<Integer, Integer> g = x -> x * 2;
+        Function<Integer, Integer> h = f.andThen(g);
+        Function<Integer, Integer> h2 = f.compose(g);
         System.out.println(h.apply(1)); //4
         System.out.println(h.apply(2)); //6
         System.out.println();

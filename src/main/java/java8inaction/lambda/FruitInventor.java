@@ -6,6 +6,7 @@ import java.util.function.BiFunction;
 
 public class FruitInventor {
     static Map<String, BiFunction<Integer, Color, Fruit>> map = new HashMap();
+
     static {
         map.put("apple", Apple::new);
     }

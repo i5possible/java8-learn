@@ -7,9 +7,9 @@ import java.util.function.LongBinaryOperator;
 
 public class BinaryOperatorTest {
     public static void main(String[] args) {
-        IntBinaryOperator intBinaryOperator = (a , b) -> a + b;
+        IntBinaryOperator intBinaryOperator = (a, b) -> a + b;
         LongBinaryOperator longBinaryOperator;
         DoubleBinaryOperator doubleBinaryOperator;
-        BinaryOperator<Apple> appleBinaryOperator = (a,b) -> a.getWeight() > b.getWeight() ? a : b;
+        BinaryOperator<Apple> appleBinaryOperator = (a, b) -> a.getWeight() > b.getWeight() ? a : b;
     }
 }
