@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static java.util.Comparator.comparing;
+
 @Getter
 @EqualsAndHashCode
 public class Transactions {
@@ -29,16 +31,14 @@ public class Transactions {
     public List<Transaction> findTransactionIn2011SortByValue(List<Transaction> transactions) {
         return transactions.stream()
                 .filter(transaction -> 2011 == transaction.getYear())
-                .sorted((a, b) -> Integer.compare(a.getValue(), b.getValue()))
+                .sorted(comparing(Transaction::getValue))
                 .collect(Collectors.toList());
 
     }
 
     public Set<String> findAllCityTraderWorked(List<Transaction> transactions) {
         return transactions.stream()
-                .map(Transaction::getTrader)
-                .map(Trader::getCity)
-                .distinct()
+                .map(transaction -> transaction.getTrader().getCity())
                 .collect(Collectors.toSet());
     }
 
@@ -47,26 +47,23 @@ public class Transactions {
                 .map(Transaction::getTrader)
                 .filter(trader -> trader.getCity().equals(CAMBRIDGE))
                 .distinct()
-                .sorted((a, b) -> a.getName().compareTo(b.getName()))
+                .sorted(comparing(Trader::getName))
                 .collect(Collectors.toList());
     }
 
-    public List<String> findAllTraderNameSortByAlphabet(List<Transaction> transactions) {
+    public String findAllTraderNameSortByAlphabet(List<Transaction> transactions) {
         return transactions.stream()
                 .map(Transaction::getTrader)
                 .map(Trader::getName)
                 .distinct()
-                .sorted(String::compareTo)
-                .collect(Collectors.toList());
-
+                .sorted()
+                // print is required,
+                .collect(Collectors.joining());
     }
 
     public boolean isAnyTraderWorkedInMilan(List<Transaction> transactions) {
         return transactions.stream()
-                .map(Transaction::getTrader)
-                .filter(trader -> MILAN.equals(trader.getCity()))
-                .findAny()
-                .isPresent();
+                .anyMatch(transaction -> transaction.getTrader().getCity().equals(MILAN));
 
     }
 
@@ -87,8 +84,7 @@ public class Transactions {
     public Transaction findTheTransactionHasTheMinimumValue(List<Transaction> transactions) {
         assert transactions.size() > 0;
         return  transactions.stream()
-                .sorted((a, b) -> Integer.min(a.getValue(), b.getValue()))
-                .findFirst().get();
+                .min(comparing(Transaction::getValue)).get();
 
     }
 }

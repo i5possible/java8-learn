@@ -57,14 +57,9 @@ public class TransactionsTest {
 
     @Test
     public void shouldReturnSortedAllTraderNames() {
-        List<String> expected = new ArrayList<>(Arrays.asList(
-                "Alan",
-                "Brian",
-                "Mario",
-                "Raoul"
-        ));
+        String expected = "AlanBrianMarioRaoul";
 
-        List<String> actual = transactions.findAllTraderNameSortByAlphabet(transactionList);
+        String actual = transactions.findAllTraderNameSortByAlphabet(transactionList);
 
         Assert.assertEquals(expected, actual);
     }
@@ -86,7 +81,7 @@ public class TransactionsTest {
     }
 
     @Test
-    public void shouldReturnMaxValue () {
+    public void shouldReturnMaxValue() {
         int expected = 1000;
 
         int actual = transactions.findTheMaxValue(transactionList);
@@ -95,7 +90,7 @@ public class TransactionsTest {
     }
 
     @Test
-    public void shouldReturnMinValueTransaction () {
+    public void shouldReturnMinValueTransaction() {
         Transaction expected = new Transaction(Transactions.brian, 2011, 300);
 
         Transaction actual = transactions.findTheTransactionHasTheMinimumValue(transactionList);
