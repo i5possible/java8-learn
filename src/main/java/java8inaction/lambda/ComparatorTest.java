@@ -12,7 +12,6 @@ public class ComparatorTest {
         inventory.sort(comparing(Apple::getWeight));
         Comparator<Apple> c = Comparator.comparing(Apple::getColor);
         c.reversed();
-        c.reversed().thenComparing(Apple::getWeight);
-
+        Comparator<Apple> appleComparator = c.reversed().thenComparing(Apple::getWeight);
     }
 }

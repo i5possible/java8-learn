@@ -4,6 +4,7 @@ import java8inaction.stream.dishes.Dish;
 import java8inaction.stream.dishes.Type;
 
 import java.util.*;
+import java.util.function.Function;
 
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.*;
@@ -74,4 +75,9 @@ public class Grouping {
             return CaloricLevel.FAT;
         }
     }
+
+    public static Map<String, Map<String, Object>> getMapMap(List<Map<String, Object>> mapList, String key) {
+        return mapList.stream().collect(toMap(map -> (String) map.get(key), Function.identity()));
+    }
+
 }

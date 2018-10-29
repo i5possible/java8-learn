@@ -1,7 +1,5 @@
 package java8inaction.stream.traders;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,8 +8,6 @@ import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparing;
 
-@Getter
-@EqualsAndHashCode
 public class Transactions {
     public static final String CAMBRIDGE = "Cambridge";
     public static final String MILAN = "Milan";

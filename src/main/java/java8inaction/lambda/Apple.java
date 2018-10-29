@@ -10,6 +10,10 @@ public class Apple implements Fruit {
         this.color = color;
     }
 
+    public static Apple create(int weight, Color color){
+        return new Apple(weight, color);
+    }
+
     public int getWeight() {
         return weight;
     }
